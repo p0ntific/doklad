@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { FadeIn } from "@/view/animations/FadeIn";
-import { Check, X, Search, Bell, User } from "lucide-react";
+import { Check, Search, Bell, User } from "lucide-react";
 
 export const UiKitExamplesSection = memo(() => {
     const [isChecked, setIsChecked] = useState(false);
@@ -108,19 +108,27 @@ export const UiKitExamplesSection = memo(() => {
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
                                     <div className="flex flex-col items-center gap-1 sm:gap-2 p-2 sm:p-4 hover:bg-gray-50 transition-colors">
                                         <Bell className="w-6 h-6 sm:w-8 sm:h-8" />
-                                        <span className="text-[10px] sm:text-xs">Bell</span>
+                                        <span className="text-[10px] sm:text-xs">
+                                            Bell
+                                        </span>
                                     </div>
                                     <div className="flex flex-col items-center gap-1 sm:gap-2 p-2 sm:p-4 hover:bg-gray-50 transition-colors">
                                         <User className="w-6 h-6 sm:w-8 sm:h-8" />
-                                        <span className="text-[10px] sm:text-xs">User</span>
+                                        <span className="text-[10px] sm:text-xs">
+                                            User
+                                        </span>
                                     </div>
                                     <div className="flex flex-col items-center gap-1 sm:gap-2 p-2 sm:p-4 hover:bg-gray-50 transition-colors">
                                         <Search className="w-6 h-6 sm:w-8 sm:h-8" />
-                                        <span className="text-[10px] sm:text-xs">Search</span>
+                                        <span className="text-[10px] sm:text-xs">
+                                            Search
+                                        </span>
                                     </div>
                                     <div className="flex flex-col items-center gap-1 sm:gap-2 p-2 sm:p-4 hover:bg-gray-50 transition-colors">
                                         <Check className="w-6 h-6 sm:w-8 sm:h-8" />
-                                        <span className="text-[10px] sm:text-xs">Check</span>
+                                        <span className="text-[10px] sm:text-xs">
+                                            Check
+                                        </span>
                                     </div>
                                 </div>
                             </div>
