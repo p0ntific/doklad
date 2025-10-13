@@ -162,16 +162,16 @@ export const FooterSection = memo(() => {
     const progressBars = Math.floor(progressPercent / 5);
 
     return (
-        <section className="min-h-screen flex items-center justify-center relative bg-black snap-start py-8">
-            <div className="container mx-auto px-4">
+        <section className="min-h-screen flex items-center justify-center relative bg-black snap-start py-4 sm:py-8">
+            <div className="container mx-auto px-2 sm:px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Title */}
-                    <motion.div 
-                        className="text-center mb-4"
+                    <motion.div
+                        className="text-center mb-2 sm:mb-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                     >
-                        <pre className="text-green-400 font-mono text-[8px] sm:text-xs mb-2">
+                        <pre className="text-green-400 font-mono text-[6px] xs:text-[8px] sm:text-xs mb-1 sm:mb-2 overflow-x-auto">
 {`╔════════════════════════════════════════════════╗
 ║  ███████╗██████╗  ██████╗ ███╗   ██╗████████╗ ║
 ║  ██╔════╝██╔══██╗██╔═══██╗████╗  ██║╚══██╔══╝ ║
@@ -180,22 +180,22 @@ export const FooterSection = memo(() => {
 ║  ██║     ██║  ██║╚██████╔╝██║ ╚████║   ██║    ║
 ╚════════════════════════════════════════════════╝`}
                         </pre>
-                        <p className="text-green-400 font-mono text-xs animate-pulse">THE JOURNEY CONTINUES</p>
+                        <p className="text-green-400 font-mono text-[10px] sm:text-xs animate-pulse">THE JOURNEY CONTINUES</p>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-4">
+                    <div className="grid lg:grid-cols-2 gap-2 sm:gap-4">
                         {/* Left Panel */}
-                        <div className="bg-black border-2 border-green-400 p-3 font-mono">
+                        <div className="bg-black border-2 border-green-400 p-2 sm:p-3 font-mono">
                             {/* Cat Display */}
-                            <div className="text-center mb-2">
-                                <div className="text-green-400 text-sm">
+                            <div className="text-center mb-1 sm:mb-2">
+                                <div className="text-green-400 text-xs sm:text-sm">
                                     ╔══ {currentCat.name} LV.{currentCat.level} ══╗
                                 </div>
                             </div>
 
                             {/* Cat with Equipment */}
                             <motion.div
-                                className="cursor-pointer select-none relative mb-2"
+                                className="cursor-pointer select-none relative mb-1 sm:mb-2"
                                 onClick={handleCatClick}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
@@ -203,39 +203,39 @@ export const FooterSection = memo(() => {
                                     filter: ['brightness(1)', 'brightness(2)', 'brightness(1)'] 
                                 } : {}}
                             >
-                                <pre className="text-green-400 text-center text-sm sm:text-base leading-tight">
+                                <pre className="text-green-400 text-center text-[10px] xs:text-xs sm:text-sm md:text-base leading-tight">
                                     {currentCat.art}
                                 </pre>
                                 {currentCat.equipment && (
-                                    <div className="text-center text-yellow-400 text-xs mt-1">
+                                    <div className="text-center text-yellow-400 text-[10px] sm:text-xs mt-1">
                                         {currentCat.equipment}
                                     </div>
                                 )}
                                 {currentCat.background && (
-                                    <div className="text-center text-xs mt-1">
+                                    <div className="text-center text-[10px] sm:text-xs mt-1">
                                         {currentCat.background}
                                     </div>
                                 )}
-                                <div className="text-center mt-2 text-green-400 text-xs animate-pulse">
+                                <div className="text-center mt-1 sm:mt-2 text-green-400 text-[10px] sm:text-xs animate-pulse">
                                     [CLICK]
                                 </div>
                             </motion.div>
 
                             {/* Progress */}
                             {nextCat && (
-                                <div className="mb-2">
-                                    <div className="text-green-400 text-[10px]">
+                                <div className="mb-1 sm:mb-2">
+                                    <div className="text-green-400 text-[8px] sm:text-[10px]">
                                         NEXT: {clicks}/{nextCat.clicksNeeded}
                                     </div>
-                                    <div className="text-green-400 font-mono text-xs">
+                                    <div className="text-green-400 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                         [{progressBars > 0 ? '█'.repeat(progressBars) : ''}{' '.repeat(20 - progressBars)}]
                                     </div>
                                 </div>
                             )}
 
                             {/* Stats */}
-                            <div className="border-t-2 border-green-400 pt-2">
-                                <div className="grid grid-cols-2 gap-2 text-green-400 text-xs">
+                            <div className="border-t-2 border-green-400 pt-1 sm:pt-2">
+                                <div className="grid grid-cols-2 gap-1 sm:gap-2 text-green-400 text-[10px] sm:text-xs">
                                     <div>PTS: <span className="text-yellow-400">{clicks}</span></div>
                                     <div>TOTAL: {totalClicks}</div>
                                     <div>PWR: <span className="text-red-400">×{currentCat.clickPower}</span></div>
@@ -247,8 +247,8 @@ export const FooterSection = memo(() => {
                         </div>
 
                         {/* Right Panel - Shop */}
-                        <div className="bg-black border-2 border-green-400 p-3 font-mono">
-                            <div className="text-green-400 text-center text-sm mb-2">
+                        <div className="bg-black border-2 border-green-400 p-2 sm:p-3 font-mono">
+                            <div className="text-green-400 text-center text-xs sm:text-sm mb-1 sm:mb-2">
                                 ╔═══ SHOP ═══╗
                             </div>
                             
@@ -257,18 +257,18 @@ export const FooterSection = memo(() => {
                                 <button
                                     onClick={buyAutoClicker}
                                     disabled={clicks < autoClickerCost}
-                                    className={`w-full p-2 border text-xs transition-all ${
+                                    className={`w-full p-1.5 sm:p-2 border text-[10px] sm:text-xs transition-all ${
                                         clicks >= autoClickerCost
                                             ? 'border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:bg-opacity-10'
                                             : 'border-gray-600 text-gray-600'
                                     }`}
                                 >
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center gap-1">
                                         <div className="text-left">
-                                            <div>[1] AUTO-CLICK #{autoClicker + 1}</div>
-                                            <div className="text-[10px]">+1/SEC</div>
+                                            <div className="truncate">[1] AUTO-CLICK #{autoClicker + 1}</div>
+                                            <div className="text-[8px] sm:text-[10px] whitespace-nowrap">+1/SEC</div>
                                         </div>
-                                        <div>{autoClickerCost}</div>
+                                        <div className="whitespace-nowrap">{autoClickerCost}</div>
                                     </div>
                                 </button>
 
@@ -276,31 +276,31 @@ export const FooterSection = memo(() => {
                                 <button
                                     onClick={buyMultiplier}
                                     disabled={clicks < multiplierCost}
-                                    className={`w-full p-2 border text-xs transition-all ${
+                                    className={`w-full p-1.5 sm:p-2 border text-[10px] sm:text-xs transition-all ${
                                         clicks >= multiplierCost
                                             ? 'border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:bg-opacity-10'
                                             : 'border-gray-600 text-gray-600'
                                     }`}
                                 >
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex justify-between items-center gap-1">
                                         <div className="text-left">
-                                            <div>[2] MULTIPLIER ×{multiplier + 1}</div>
-                                            <div className="text-[10px]">BOOST ALL</div>
+                                            <div className="truncate">[2] MULTIPLIER ×{multiplier + 1}</div>
+                                            <div className="text-[8px] sm:text-[10px] whitespace-nowrap">BOOST ALL</div>
                                         </div>
-                                        <div>{multiplierCost}</div>
+                                        <div className="whitespace-nowrap">{multiplierCost}</div>
                                     </div>
                                 </button>
 
                                 {level === CAT_STAGES.length - 1 && (
-                                    <div className="p-2 border-2 border-yellow-400 text-yellow-400 text-center text-xs animate-pulse">
+                                    <div className="p-1.5 sm:p-2 border-2 border-yellow-400 text-yellow-400 text-center text-[10px] sm:text-xs animate-pulse">
                                         ★ MAX LVL ★
                                     </div>
                                 )}
                             </div>
 
                             {/* Tips */}
-                            <div className="mt-2 border-t-2 border-green-400 pt-2">
-                                <div className="text-green-400 text-[10px] space-y-1">
+                            <div className="mt-2 border-t-2 border-green-400 pt-1 sm:pt-2">
+                                <div className="text-green-400 text-[8px] sm:text-[10px] space-y-0.5 sm:space-y-1">
                                     <div>&gt; MULTIPLIER BOOSTS EVERYTHING</div>
                                     <div>&gt; AUTO-CLICKS GAIN FROM MULT</div>
                                     <div>&gt; EQUIPMENT UNLOCKS AT LEVELS</div>
@@ -310,8 +310,8 @@ export const FooterSection = memo(() => {
                     </div>
 
                     {/* Footer */}
-                    <div className="mt-4 text-center text-green-400 font-mono text-xs">
-                        <div className="mb-1">━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
+                    <div className="mt-2 sm:mt-4 text-center text-green-400 font-mono text-[10px] sm:text-xs">
+                        <div className="mb-1 overflow-x-auto">━━━━━━━━━━━━━━━━━━━━━━━━━━━</div>
                         <div>(C) 2025 • MADE WITH &lt;LOVE/&gt;</div>
                     </div>
                 </div>

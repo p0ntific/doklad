@@ -9,33 +9,33 @@ export const SsrSection = memo(() => {
     );
 
     return (
-        <section className="h-screen flex items-center py-16 relative bg-white border-t border-gray-200 snap-start">
-            <div className="container mx-auto px-6 h-full flex items-center">
+        <section className="h-screen flex items-center py-8 sm:py-16 relative bg-white border-t border-gray-200 snap-start">
+            <div className="container mx-auto px-4 sm:px-6 h-full flex items-center">
                 <div className="max-w-6xl mx-auto w-full">
                     <FadeIn>
-                        <div className="text-gray-500 text-xs font-bold tracking-[0.3em] mb-6 uppercase">
+                        <div className="text-gray-500 text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 uppercase">
                             Эра 3 • 2015-Настоящее
                         </div>
                     </FadeIn>
 
                     <Reveal delay={0.2}>
-                        <h2 className="text-6xl md:text-8xl font-black mb-8 leading-none tracking-tighter">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-4 sm:mb-8 leading-none tracking-tighter">
                             SSR
                         </h2>
                     </Reveal>
 
                     <FadeIn delay={0.4}>
                         <div className="bg-white border-2 border-gray-300">
-                            <div className="border-b-2 border-gray-300 bg-gray-100 px-4 py-2">
-                                <div className="text-xs text-gray-600 mb-1">
+                            <div className="border-b-2 border-gray-300 bg-gray-100 px-2 sm:px-4 py-2">
+                                <div className="text-[10px] sm:text-xs text-gray-600 mb-1">
                                     Next.js Application
                                 </div>
                             </div>
 
-                            <div className="flex border-b border-gray-300">
+                            <div className="flex border-b border-gray-300 overflow-x-auto">
                                 <button
                                     onClick={() => setActivePage("server")}
-                                    className={`px-6 py-3 border-r border-gray-300 transition-colors ${
+                                    className={`px-3 sm:px-6 py-2 sm:py-3 border-r border-gray-300 transition-colors text-sm sm:text-base whitespace-nowrap ${
                                         activePage === "server"
                                             ? "bg-white font-bold"
                                             : "bg-gray-50 hover:bg-gray-100"
@@ -45,7 +45,7 @@ export const SsrSection = memo(() => {
                                 </button>
                                 <button
                                     onClick={() => setActivePage("client")}
-                                    className={`px-6 py-3 border-r border-gray-300 transition-colors ${
+                                    className={`px-3 sm:px-6 py-2 sm:py-3 border-r border-gray-300 transition-colors text-sm sm:text-base whitespace-nowrap ${
                                         activePage === "client"
                                             ? "bg-white font-bold"
                                             : "bg-gray-50 hover:bg-gray-100"
@@ -55,7 +55,7 @@ export const SsrSection = memo(() => {
                                 </button>
                                 <button
                                     onClick={() => setActivePage("code")}
-                                    className={`px-6 py-3 transition-colors ${
+                                    className={`px-3 sm:px-6 py-2 sm:py-3 transition-colors text-sm sm:text-base whitespace-nowrap ${
                                         activePage === "code"
                                             ? "bg-white font-bold"
                                             : "bg-gray-50 hover:bg-gray-100"
@@ -65,25 +65,25 @@ export const SsrSection = memo(() => {
                                 </button>
                             </div>
 
-                            <div className="p-8 h-[400px] overflow-auto">
+                            <div className="p-4 sm:p-8 h-[350px] sm:h-[400px] overflow-auto">
                                 {activePage === "server" && (
-                                    <div className="space-y-6">
-                                        <div className="flex items-center gap-4 mb-6">
-                                            <Server className="w-12 h-12" />
-                                            <div className="text-4xl font-black">
+                                    <div className="space-y-4 sm:space-y-6">
+                                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                            <Server className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+                                            <div className="text-2xl sm:text-3xl md:text-4xl font-black">
                                                 Серверный рендеринг
                                             </div>
                                         </div>
-                                        <p className="text-xl text-gray-700">
+                                        <p className="text-base sm:text-lg md:text-xl text-gray-700">
                                             HTML генерируется на сервере.
                                             Пользователь получает готовую
                                             разметку.
                                         </p>
-                                        <div className="bg-gray-50 p-6 border border-gray-200">
-                                            <div className="text-sm font-bold mb-3">
+                                        <div className="bg-gray-50 p-4 sm:p-6 border border-gray-200">
+                                            <div className="text-xs sm:text-sm font-bold mb-2 sm:mb-3">
                                                 Процесс:
                                             </div>
-                                            <div className="space-y-2 text-sm text-gray-700">
+                                            <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-700">
                                                 <div>
                                                     1. Запрос от клиента →
                                                 </div>
@@ -100,32 +100,32 @@ export const SsrSection = memo(() => {
                                 )}
 
                                 {activePage === "client" && (
-                                    <div className="space-y-6">
-                                        <div className="flex items-center gap-4 mb-6">
-                                            <Zap className="w-12 h-12" />
-                                            <div className="text-4xl font-black">
+                                    <div className="space-y-4 sm:space-y-6">
+                                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                            <Zap className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+                                            <div className="text-2xl sm:text-3xl md:text-4xl font-black">
                                                 Гидратация
                                             </div>
                                         </div>
-                                        <p className="text-xl text-gray-700">
+                                        <p className="text-base sm:text-lg md:text-xl text-gray-700">
                                             JS подключает интерактивность к уже
                                             готовой HTML-разметке.
                                         </p>
-                                        <div className="space-y-4">
-                                            <div className="bg-green-50 border-l-4 border-green-500 p-4">
-                                                <div className="font-bold text-green-900 mb-1">
+                                        <div className="space-y-3 sm:space-y-4">
+                                            <div className="bg-green-50 border-l-4 border-green-500 p-3 sm:p-4">
+                                                <div className="font-bold text-green-900 mb-1 text-sm sm:text-base">
                                                     ✓ Мгновенный контент
                                                 </div>
-                                                <div className="text-sm text-green-700">
+                                                <div className="text-xs sm:text-sm text-green-700">
                                                     Пользователь видит страницу
                                                     сразу
                                                 </div>
                                             </div>
-                                            <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
-                                                <div className="font-bold text-blue-900 mb-1">
+                                            <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4">
+                                                <div className="font-bold text-blue-900 mb-1 text-sm sm:text-base">
                                                     ✓ SEO-friendly
                                                 </div>
-                                                <div className="text-sm text-blue-700">
+                                                <div className="text-xs sm:text-sm text-blue-700">
                                                     Роботы индексируют готовый
                                                     HTML
                                                 </div>
@@ -135,14 +135,14 @@ export const SsrSection = memo(() => {
                                 )}
 
                                 {activePage === "code" && (
-                                    <div className="space-y-6">
-                                        <div className="flex items-center gap-4 mb-6">
-                                            <Code className="w-12 h-12" />
-                                            <div className="text-4xl font-black">
+                                    <div className="space-y-4 sm:space-y-6">
+                                        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                                            <Code className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+                                            <div className="text-2xl sm:text-3xl md:text-4xl font-black">
                                                 Next.js пример
                                             </div>
                                         </div>
-                                        <div className="bg-gray-900 text-gray-100 p-6 font-mono text-sm">
+                                        <div className="bg-gray-900 text-gray-100 p-4 sm:p-6 font-mono text-xs sm:text-sm overflow-x-auto">
                                             <div className="text-blue-400">
                                                 export default async function
                                             </div>
@@ -165,7 +165,7 @@ export const SsrSection = memo(() => {
                                             </div>
                                             <div>{"}"}</div>
                                         </div>
-                                        <p className="text-sm text-gray-600">
+                                        <p className="text-xs sm:text-sm text-gray-600">
                                             Данные получены на сервере, HTML
                                             отдан клиенту готовым.
                                         </p>

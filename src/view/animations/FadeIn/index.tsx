@@ -5,11 +5,12 @@ interface IFadeInProps {
     children: ReactNode;
     delay?: number;
     duration?: number;
+    className?: string;
     direction?: "up" | "down" | "left" | "right" | "none";
 }
 
 export const FadeIn = memo<IFadeInProps>(
-    ({ children, delay = 0, duration = 0.8, direction = "up" }) => {
+    ({ children, delay = 0, className, duration = 0.8, direction = "up" }) => {
         const getInitialPosition = () => {
             switch (direction) {
                 case "up":
@@ -37,6 +38,7 @@ export const FadeIn = memo<IFadeInProps>(
                     delay,
                     ease: [0.25, 0.1, 0.25, 1],
                 }}
+                className={className}
             >
                 {children}
             </motion.div>

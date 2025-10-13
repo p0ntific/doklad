@@ -67,14 +67,14 @@ export const NextJsSection2 = memo(() => {
     };
 
     return (
-        <section className="h-screen flex items-center py-32 relative bg-gray-50 snap-start">
-            <div className="container mx-auto px-6 h-full flex items-center">
+        <section className="h-screen flex items-center py-8 sm:py-20 md:py-32 relative bg-gray-50 snap-start">
+            <div className="container mx-auto px-4 sm:px-6 h-full flex items-center">
                 <div className="max-w-5xl mx-auto w-full">
-                    <div className="text-center mb-12">
-                        <h2 className="text-6xl md:text-8xl font-black mb-6 leading-none tracking-tighter">
+                    <div className="text-center mb-6 sm:mb-12">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-4 sm:mb-6 leading-none tracking-tighter">
                             Next.js
                         </h2>
-                        <p className="text-xl text-gray-600">
+                        <p className="text-base sm:text-lg md:text-xl text-gray-600">
                             Возможности платформы
                         </p>
                     </div>
@@ -87,22 +87,22 @@ export const NextJsSection2 = memo(() => {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 0.3 }}
-                                className="bg-white border-2 border-gray-300 p-12 h-[500px] flex flex-col justify-center"
+                                className="bg-white border-2 border-gray-300 p-4 sm:p-8 md:p-12 h-[400px] sm:h-[500px] flex flex-col justify-center"
                             >
-                                <div className="text-xs font-bold tracking-[0.3em] text-gray-500 uppercase mb-4">
+                                <div className="text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] text-gray-500 uppercase mb-2 sm:mb-4">
                                     {features[currentSlide].subtitle}
                                 </div>
-                                <h3 className="text-5xl font-black mb-8">
+                                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-8">
                                     {features[currentSlide].title}
                                 </h3>
-                                <p className="text-xl text-gray-700 leading-relaxed mb-8">
+                                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-8">
                                     {features[currentSlide].description}
                                 </p>
-                                <div className="bg-gray-50 border-l-4 border-black p-6">
-                                    <div className="text-sm font-bold mb-2">
+                                <div className="bg-gray-50 border-l-4 border-black p-3 sm:p-6">
+                                    <div className="text-xs sm:text-sm font-bold mb-1 sm:mb-2">
                                         Зачем это нужно?
                                     </div>
-                                    <p className="text-gray-700">
+                                    <p className="text-xs sm:text-sm md:text-base text-gray-700">
                                         {features[currentSlide].benefit}
                                     </p>
                                 </div>
@@ -111,25 +111,25 @@ export const NextJsSection2 = memo(() => {
 
                         <button
                             onClick={prevSlide}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 bg-black text-white hover:bg-gray-800 transition-colors flex items-center justify-center"
+                            className="absolute left-2 sm:left-0 top-1/2 -translate-y-1/2 sm:-translate-x-16 w-10 h-10 sm:w-12 sm:h-12 bg-black text-white hover:bg-gray-800 transition-colors flex items-center justify-center z-10"
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                         </button>
 
                         <button
                             onClick={nextSlide}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 bg-black text-white hover:bg-gray-800 transition-colors flex items-center justify-center"
+                            className="absolute right-2 sm:right-0 top-1/2 -translate-y-1/2 sm:translate-x-16 w-10 h-10 sm:w-12 sm:h-12 bg-black text-white hover:bg-gray-800 transition-colors flex items-center justify-center z-10"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                         </button>
                     </div>
 
-                    <div className="flex justify-center gap-2 mt-8">
+                    <div className="flex justify-center gap-2 mt-4 sm:mt-8">
                         {features.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentSlide(idx)}
-                                className={`w-3 h-3 transition-colors ${
+                                className={`w-2 h-2 sm:w-3 sm:h-3 transition-colors ${
                                     currentSlide === idx
                                         ? "bg-black"
                                         : "bg-gray-300 hover:bg-gray-400"

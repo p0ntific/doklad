@@ -191,25 +191,25 @@ export const TranslationsSection = memo(() => {
     const currentTranslation = translations[selectedLang];
 
     return (
-        <section className="h-screen flex items-center py-32 relative bg-white border-t border-gray-200 snap-start">
-            <div className="container mx-auto px-6">
+        <section className="h-screen flex items-center py-8 sm:py-20 md:py-32 relative bg-white border-t border-gray-200 snap-start">
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="max-w-6xl mx-auto">
-                    <div className="flex items-center justify-between mb-12">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-12 gap-4">
                         <FadeIn>
-                            <div className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase">
+                            <div className="text-gray-500 text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] uppercase">
                                 Практики • I18n
                             </div>
                         </FadeIn>
-                        <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <Globe className="w-5 h-5 text-gray-500" />
+                        <div className="relative w-full sm:w-auto">
+                            <div className="absolute inset-y-0 left-0 pl-2 sm:pl-4 flex items-center pointer-events-none">
+                                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                             </div>
                             <select
                                 value={selectedLang}
                                 onChange={(e) =>
                                     setSelectedLang(e.target.value)
                                 }
-                                className="pl-12 pr-10 py-3 border-2 border-gray-300 bg-white font-semibold focus:outline-none focus:border-black hover:border-gray-400 transition-colors appearance-none cursor-pointer text-base"
+                                className="w-full sm:w-auto pl-8 sm:pl-12 pr-8 sm:pr-10 py-2 sm:py-3 text-sm sm:text-base border-2 border-gray-300 bg-white font-semibold focus:outline-none focus:border-black hover:border-gray-400 transition-colors appearance-none cursor-pointer"
                                 style={{
                                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
                                     backgroundRepeat: "no-repeat",
@@ -232,51 +232,51 @@ export const TranslationsSection = memo(() => {
                     </div>
 
                     <div>
-                        <h2 className="text-6xl md:text-9xl font-black mb-12 leading-none">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-9xl font-black mb-6 sm:mb-12 leading-none">
                             {currentTranslation.title}
                         </h2>
 
-                        <p className="text-3xl text-gray-700 leading-relaxed mb-4 font-light">
+                        <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 leading-relaxed mb-3 sm:mb-4 font-light">
                             {currentTranslation.subtitle}
                         </p>
 
-                        <p className="text-xl text-gray-600 mb-12">
+                        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-12">
                             {currentTranslation.description}
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-gray-50 p-6 border border-gray-200">
-                                <div className="text-sm font-bold mb-3 uppercase tracking-wider">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                            <div className="bg-gray-50 p-4 sm:p-6 border border-gray-200">
+                                <div className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 uppercase tracking-wider">
                                     Interpolation
                                 </div>
-                                <p className="text-gray-700">
+                                <p className="text-sm sm:text-base text-gray-700">
                                     {currentTranslation.features.interpolation}
                                 </p>
                             </div>
 
-                            <div className="bg-gray-50 p-6 border border-gray-200">
-                                <div className="text-sm font-bold mb-3 uppercase tracking-wider">
+                            <div className="bg-gray-50 p-4 sm:p-6 border border-gray-200">
+                                <div className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 uppercase tracking-wider">
                                     Formatting
                                 </div>
-                                <p className="text-gray-700">
+                                <p className="text-sm sm:text-base text-gray-700">
                                     {currentTranslation.features.formatting}
                                 </p>
                             </div>
 
-                            <div className="bg-gray-50 p-6 border border-gray-200">
-                                <div className="text-sm font-bold mb-3 uppercase tracking-wider">
+                            <div className="bg-gray-50 p-4 sm:p-6 border border-gray-200">
+                                <div className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 uppercase tracking-wider">
                                     TypeScript
                                 </div>
-                                <p className="text-gray-700">
+                                <p className="text-sm sm:text-base text-gray-700">
                                     {currentTranslation.features.typeScript}
                                 </p>
                             </div>
 
-                            <div className="bg-gray-50 p-6 border border-gray-200">
-                                <div className="text-sm font-bold mb-3 uppercase tracking-wider">
+                            <div className="bg-gray-50 p-4 sm:p-6 border border-gray-200">
+                                <div className="text-xs sm:text-sm font-bold mb-2 sm:mb-3 uppercase tracking-wider">
                                     Performance
                                 </div>
-                                <p className="text-gray-700">
+                                <p className="text-sm sm:text-base text-gray-700">
                                     {currentTranslation.features.performance}
                                 </p>
                             </div>

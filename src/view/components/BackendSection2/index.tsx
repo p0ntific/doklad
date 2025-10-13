@@ -77,22 +77,22 @@ const user = await response.json();`,
     const current = methodData[selectedMethod];
 
     return (
-        <section className="h-screen flex items-center py-16 relative bg-white border-t border-gray-200 snap-start">
-            <div className="container mx-auto px-6 h-full flex items-center">
+        <section className="min-h-screen flex items-center py-8 sm:py-12 lg:py-16 relative bg-white border-t border-gray-200 snap-start">
+            <div className="container mx-auto px-4 sm:px-6 h-full flex items-center">
                 <div className="max-w-7xl mx-auto w-full">
-                    <div className="flex items-center gap-6 mb-8">
-                        <Database className="w-16 h-16" />
+                    <div className="flex items-center gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8">
+                        <Database className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 flex-shrink-0" />
                         <div>
-                            <h2 className="text-6xl md:text-8xl font-black leading-none">
+                            <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-8xl font-black leading-none">
                                 HTTP Методы
                             </h2>
-                            <p className="text-xl text-gray-600 mt-2">
+                            <p className="text-sm sm:text-base lg:text-xl text-gray-600 mt-1 sm:mt-2">
                                 CRUD операции с API
                             </p>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-4 mb-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6">
                         {(["GET", "POST", "PUT", "DELETE"] as const).map(
                             (method) => {
                                 const data = methodData[method];
@@ -102,13 +102,13 @@ const user = await response.json();`,
                                         onClick={() =>
                                             setSelectedMethod(method)
                                         }
-                                        className={`p-6 border-2 transition-all text-center ${
+                                        className={`p-3 sm:p-4 lg:p-6 border-2 transition-all text-center ${
                                             selectedMethod === method
                                                 ? `${data.color} ${data.bgColor}`
                                                 : "border-gray-300 hover:border-gray-400"
                                         }`}
                                     >
-                                        <div className="font-mono font-black text-2xl">
+                                        <div className="font-mono font-black text-base sm:text-xl lg:text-2xl">
                                             {method}
                                         </div>
                                     </button>
@@ -117,39 +117,41 @@ const user = await response.json();`,
                         )}
                     </div>
 
-                    <div className="grid grid-cols-5 gap-6">
-                        <div className="col-span-3 bg-gray-50 border border-gray-200 p-8">
-                            <div className="mb-6">
-                                {current.icon}
-                                <h3 className="text-4xl font-black mb-3">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6">
+                        <div className="lg:col-span-3 bg-gray-50 border border-gray-200 p-4 sm:p-6 lg:p-8">
+                            <div className="mb-4 sm:mb-6">
+                                <div className="[&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10 lg:[&>svg]:w-12 lg:[&>svg]:h-12 mb-3 sm:mb-4">
+                                    {current.icon}
+                                </div>
+                                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2 sm:mb-3">
                                     {current.title}
                                 </h3>
-                                <p className="text-lg text-gray-700">
+                                <p className="text-sm sm:text-base lg:text-lg text-gray-700">
                                     {current.description}
                                 </p>
                             </div>
 
-                            <div className="bg-gray-900 text-gray-100 p-6 font-mono text-base">
+                            <div className="bg-gray-900 text-gray-100 p-4 sm:p-6 font-mono text-xs sm:text-sm lg:text-base overflow-x-auto">
                                 <pre className="whitespace-pre-wrap">
                                     {current.code}
                                 </pre>
                             </div>
                         </div>
 
-                        <div className="col-span-2 bg-white border border-gray-200 p-6">
-                            <div className="flex items-center gap-3 mb-6">
-                                <Code className="w-8 h-8" />
-                                <div className="text-2xl font-bold">
+                        <div className="lg:col-span-2 bg-white border border-gray-200 p-4 sm:p-6">
+                            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                                <Code className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 flex-shrink-0" />
+                                <div className="text-lg sm:text-xl lg:text-2xl font-bold">
                                     Применение
                                 </div>
                             </div>
-                            <div className="space-y-3">
+                            <div className="space-y-2 sm:space-y-3">
                                 {current.examples.map((example, idx) => (
                                     <div
                                         key={idx}
-                                        className="border-l-4 border-gray-300 pl-4 py-2 hover:border-black hover:bg-gray-50 transition-all"
+                                        className="border-l-4 border-gray-300 pl-3 sm:pl-4 py-2 hover:border-black hover:bg-gray-50 transition-all"
                                     >
-                                        <span className="text-sm font-medium">
+                                        <span className="text-xs sm:text-sm font-medium">
                                             {example}
                                         </span>
                                     </div>

@@ -9,12 +9,12 @@ export const HeroSection = memo(() => {
     return (
         <section className="h-screen relative overflow-hidden snap-start">
             <AuroraBackground showRadialGradient={true}>
-                <div className="container mx-auto px-6 max-w-7xl">
-                    <div className="flex justify-center items-center mb-8">
+                <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+                    <div className="flex justify-center items-center mb-4 sm:mb-8">
                         {letters.map((letter, idx) => (
                             <motion.span
                                 key={idx}
-                                className="text-8xl md:text-[12rem] font-black text-black leading-none tracking-tighter inline-block"
+                                className="text-5xl sm:text-7xl md:text-8xl lg:text-[12rem] font-black text-black leading-none tracking-tighter inline-block"
                                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 transition={{
@@ -33,7 +33,7 @@ export const HeroSection = memo(() => {
                     </div>
 
                     <motion.p
-                        className="text-3xl md:text-5xl text-gray-700 font-light max-w-4xl mx-auto text-center leading-tight"
+                        className="text-lg sm:text-2xl md:text-3xl lg:text-5xl text-gray-700 font-light max-w-4xl mx-auto text-center leading-tight px-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.8 }}
@@ -43,7 +43,7 @@ export const HeroSection = memo(() => {
                     </motion.p>
 
                     <motion.div
-                        className="mt-16 h-2 w-40 bg-black mx-auto"
+                        className="mt-8 sm:mt-16 h-2 w-24 sm:w-40 bg-black mx-auto"
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
                         transition={{ duration: 1, delay: 1.2 }}
@@ -51,7 +51,7 @@ export const HeroSection = memo(() => {
                 </div>
 
                 <motion.div
-                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                    className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2"
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >

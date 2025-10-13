@@ -7,74 +7,74 @@ export const SeoSection = memo(() => {
     >("meta");
 
     return (
-        <section className="h-screen flex items-center py-16 relative bg-gray-50 snap-start">
-            <div className="container mx-auto px-6 h-full flex items-center">
+        <section className="h-screen flex items-center py-8 sm:py-16 relative bg-gray-50 snap-start">
+            <div className="container mx-auto px-4 sm:px-6 h-full flex items-center">
                 <div className="max-w-7xl mx-auto w-full">
-                    <div className="mb-8">
-                        <h2 className="text-7xl md:text-9xl font-black leading-none">
+                    <div className="mb-4 sm:mb-8">
+                        <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-black leading-none">
                             SEO
                         </h2>
-                        <p className="text-2xl text-gray-600 mt-4">
+                        <p className="text-base sm:text-xl md:text-2xl text-gray-600 mt-2 sm:mt-4">
                             Детали для индексации и ранжирования
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-4 mb-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6">
                         <button
                             onClick={() => setActiveTab("meta")}
-                            className={`p-6 border-2 transition-all text-left ${
+                            className={`p-3 sm:p-6 border-2 transition-all text-left ${
                                 activeTab === "meta"
                                     ? "border-black bg-white"
                                     : "border-gray-300 bg-gray-50 hover:border-gray-400"
                             }`}
                         >
-                            <Target className="w-8 h-8 mb-3" />
-                            <div className="font-bold">Мета-теги</div>
+                            <Target className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3" />
+                            <div className="font-bold text-sm sm:text-base">Мета-теги</div>
                         </button>
                         <button
                             onClick={() => setActiveTab("robots")}
-                            className={`p-6 border-2 transition-all text-left ${
+                            className={`p-3 sm:p-6 border-2 transition-all text-left ${
                                 activeTab === "robots"
                                     ? "border-black bg-white"
                                     : "border-gray-300 bg-gray-50 hover:border-gray-400"
                             }`}
                         >
-                            <Search className="w-8 h-8 mb-3" />
-                            <div className="font-bold">Robots</div>
+                            <Search className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3" />
+                            <div className="font-bold text-sm sm:text-base">Robots</div>
                         </button>
                         <button
                             onClick={() => setActiveTab("redirects")}
-                            className={`p-6 border-2 transition-all text-left ${
+                            className={`p-3 sm:p-6 border-2 transition-all text-left ${
                                 activeTab === "redirects"
                                     ? "border-black bg-white"
                                     : "border-gray-300 bg-gray-50 hover:border-gray-400"
                             }`}
                         >
-                            <Link2 className="w-8 h-8 mb-3" />
-                            <div className="font-bold">Маски</div>
+                            <Link2 className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3" />
+                            <div className="font-bold text-sm sm:text-base">Маски</div>
                         </button>
                         <button
                             onClick={() => setActiveTab("jsonld")}
-                            className={`p-6 border-2 transition-all text-left ${
+                            className={`p-3 sm:p-6 border-2 transition-all text-left ${
                                 activeTab === "jsonld"
                                     ? "border-black bg-white"
                                     : "border-gray-300 bg-gray-50 hover:border-gray-400"
                             }`}
                         >
-                            <Code className="w-8 h-8 mb-3" />
-                            <div className="font-bold">JSON-LD</div>
+                            <Code className="w-6 h-6 sm:w-8 sm:h-8 mb-2 sm:mb-3" />
+                            <div className="font-bold text-sm sm:text-base">JSON-LD</div>
                         </button>
                     </div>
 
-                    <div className="bg-white border-2 border-gray-300 p-8 h-[420px] overflow-auto">
+                    <div className="bg-white border-2 border-gray-300 p-4 sm:p-8 h-[300px] sm:h-[420px] overflow-auto">
                         {activeTab === "meta" && (
                             <div>
-                                <h3 className="text-3xl font-black mb-6">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 sm:mb-6">
                                     Мета-теги для поисковых систем и соцсетей
                                 </h3>
 
-                                <div className="space-y-4 mb-6">
-                                    <div className="bg-gray-900 text-gray-100 p-6 font-mono text-xs">
+                                <div className="space-y-4 mb-4 sm:mb-6">
+                                    <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                         <div className="text-gray-400 mb-2">
                                             {"// Базовые мета-теги"}
                                         </div>
@@ -123,7 +123,7 @@ export const SeoSection = memo(() => {
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-900 text-gray-100 p-6 font-mono text-xs">
+                                    <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                         <div className="text-gray-400 mb-2">
                                             {
                                                 "// Open Graph (Facebook, LinkedIn)"
@@ -186,7 +186,7 @@ export const SeoSection = memo(() => {
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-900 text-gray-100 p-6 font-mono text-xs">
+                                    <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                         <div className="text-gray-400 mb-2">
                                             {"// Twitter Cards"}
                                         </div>
@@ -237,8 +237,8 @@ export const SeoSection = memo(() => {
                                     </div>
                                 </div>
 
-                                <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
-                                    <p className="text-sm text-gray-700">
+                                <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4">
+                                    <p className="text-xs sm:text-sm text-gray-700">
                                         <strong>Зачем это нужно:</strong>{" "}
                                         Мета-теги контролируют как ваш сайт
                                         отображается в поисковиках и при репосте
@@ -253,13 +253,13 @@ export const SeoSection = memo(() => {
 
                         {activeTab === "robots" && (
                             <div>
-                                <h3 className="text-3xl font-black mb-6">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 sm:mb-6">
                                     robots.txt & sitemap.xml - Управление
                                     индексацией
                                 </h3>
-                                <div className="grid grid-cols-2 gap-6 mb-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                                     <div>
-                                        <div className="bg-gray-900 text-gray-100 p-6 font-mono text-xs mb-3">
+                                        <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs mb-3 overflow-x-auto">
                                             <div className="text-green-400 mb-2">
                                                 # robots.txt
                                             </div>
@@ -280,7 +280,7 @@ export const SeoSection = memo(() => {
                                             <div>User-agent: Googlebot</div>
                                             <div>Crawl-delay: 1</div>
                                         </div>
-                                        <div className="text-xs text-gray-600 bg-gray-50 p-3 border border-gray-200">
+                                        <div className="text-[10px] sm:text-xs text-gray-600 bg-gray-50 p-2 sm:p-3 border border-gray-200">
                                             <strong>robots.txt</strong>{" "}
                                             указывает поисковым роботам, какие
                                             страницы индексировать, а какие -
@@ -288,7 +288,7 @@ export const SeoSection = memo(() => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="bg-gray-900 text-gray-100 p-6 font-mono text-xs mb-3">
+                                        <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs mb-3 overflow-x-auto">
                                             <div className="text-green-400 mb-2">
                                                 # sitemap.xml
                                             </div>
@@ -333,7 +333,7 @@ export const SeoSection = memo(() => {
                                                 &lt;/urlset&gt;
                                             </div>
                                         </div>
-                                        <div className="text-xs text-gray-600 bg-gray-50 p-3 border border-gray-200">
+                                        <div className="text-[10px] sm:text-xs text-gray-600 bg-gray-50 p-2 sm:p-3 border border-gray-200">
                                             <strong>sitemap.xml</strong> - карта
                                             сайта со всеми важными URL. Помогает
                                             поисковикам быстрее найти и
@@ -341,8 +341,8 @@ export const SeoSection = memo(() => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4">
-                                    <p className="text-sm text-gray-700">
+                                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3 sm:p-4">
+                                    <p className="text-xs sm:text-sm text-gray-700">
                                         <strong>Важно:</strong> robots.txt не
                                         защищает от индексации на 100%.
                                         Используйте meta robots="noindex" для
@@ -356,35 +356,35 @@ export const SeoSection = memo(() => {
 
                         {activeTab === "redirects" && (
                             <div>
-                                <h3 className="text-3xl font-black mb-6">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 sm:mb-6">
                                     Маскирование URL и редиректы
                                 </h3>
 
-                                <div className="space-y-6 mb-6">
+                                <div className="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
                                     <div>
-                                        <h4 className="font-bold text-lg mb-3">
+                                        <h4 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
                                             URL Rewriting (Маскирование)
                                         </h4>
-                                        <div className="flex items-center gap-4 mb-3">
-                                            <div className="flex-1 bg-green-50 p-4 border-2 border-green-300">
-                                                <div className="text-xs text-gray-500 mb-1">
+                                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 mb-3">
+                                            <div className="flex-1 bg-green-50 p-3 sm:p-4 border-2 border-green-300">
+                                                <div className="text-[10px] sm:text-xs text-gray-500 mb-1">
                                                     ✓ SEO-friendly URL:
                                                 </div>
-                                                <code className="text-base font-mono font-bold">
+                                                <code className="text-xs sm:text-sm md:text-base font-mono font-bold break-all">
                                                     /products/laptops/macbook-pro
                                                 </code>
                                             </div>
-                                            <ArrowRight className="w-6 h-6 text-gray-400" />
-                                            <div className="flex-1 bg-gray-50 p-4 border border-gray-300">
-                                                <div className="text-xs text-gray-500 mb-1">
+                                            <ArrowRight className="w-6 h-6 text-gray-400 self-center hidden sm:block" />
+                                            <div className="flex-1 bg-gray-50 p-3 sm:p-4 border border-gray-300">
+                                                <div className="text-[10px] sm:text-xs text-gray-500 mb-1">
                                                     Внутренний путь:
                                                 </div>
-                                                <code className="text-sm font-mono text-gray-600">
+                                                <code className="text-xs sm:text-sm font-mono text-gray-600 break-all">
                                                     /catalog?cat=laptops&id=123
                                                 </code>
                                             </div>
                                         </div>
-                                        <div className="bg-gray-900 text-gray-100 p-4 font-mono text-xs">
+                                        <div className="bg-gray-900 text-gray-100 p-3 sm:p-4 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                             <div className="text-gray-400">
                                                 {"// Next.js rewrites"}
                                             </div>
@@ -407,30 +407,30 @@ export const SeoSection = memo(() => {
                                     </div>
 
                                     <div>
-                                        <h4 className="font-bold text-lg mb-3">
+                                        <h4 className="font-bold text-base sm:text-lg mb-2 sm:mb-3">
                                             Редиректы (301 vs 302)
                                         </h4>
-                                        <div className="grid grid-cols-2 gap-4 mb-3">
-                                            <div className="bg-blue-50 border-2 border-blue-300 p-4">
-                                                <div className="font-bold mb-2">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-3">
+                                            <div className="bg-blue-50 border-2 border-blue-300 p-3 sm:p-4">
+                                                <div className="font-bold mb-1 sm:mb-2 text-sm sm:text-base">
                                                     301 - Постоянный
                                                 </div>
-                                                <div className="text-sm text-gray-700">
+                                                <div className="text-xs sm:text-sm text-gray-700">
                                                     Для переехавших страниц.
                                                     Передаёт вес страницы в SEO.
                                                 </div>
                                             </div>
-                                            <div className="bg-purple-50 border-2 border-purple-300 p-4">
-                                                <div className="font-bold mb-2">
+                                            <div className="bg-purple-50 border-2 border-purple-300 p-3 sm:p-4">
+                                                <div className="font-bold mb-1 sm:mb-2 text-sm sm:text-base">
                                                     302 - Временный
                                                 </div>
-                                                <div className="text-sm text-gray-700">
+                                                <div className="text-xs sm:text-sm text-gray-700">
                                                     Для A/B тестов, временных
                                                     акций. Не передаёт SEO вес.
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="bg-gray-900 text-gray-100 p-4 font-mono text-xs">
+                                        <div className="bg-gray-900 text-gray-100 p-3 sm:p-4 font-mono text-[10px] sm:text-xs overflow-x-auto">
                                             <div className="text-gray-400">
                                                 {"// Конфигурация редиректов"}
                                             </div>
@@ -490,8 +490,8 @@ export const SeoSection = memo(() => {
                                     </div>
                                 </div>
 
-                                <div className="bg-green-50 border-l-4 border-green-500 p-4">
-                                    <p className="text-sm text-gray-700">
+                                <div className="bg-green-50 border-l-4 border-green-500 p-3 sm:p-4">
+                                    <p className="text-xs sm:text-sm text-gray-700">
                                         <strong>SEO эффект:</strong> ЧПУ
                                         (человекопонятные URL) улучшают CTR в
                                         поиске на 25-30%. Правильные 301
@@ -504,10 +504,10 @@ export const SeoSection = memo(() => {
 
                         {activeTab === "jsonld" && (
                             <div>
-                                <h3 className="text-3xl font-black mb-6">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-black mb-4 sm:mb-6">
                                     Структурированные данные JSON-LD
                                 </h3>
-                                <div className="bg-gray-900 text-gray-100 p-6 font-mono text-sm overflow-auto">
+                                <div className="bg-gray-900 text-gray-100 p-3 sm:p-6 font-mono text-[10px] sm:text-xs md:text-sm overflow-auto">
                                     <div className="text-blue-400">
                                         &lt;script type=
                                         <span className="text-green-400">
@@ -606,7 +606,7 @@ export const SeoSection = memo(() => {
                                         &lt;/script&gt;
                                     </div>
                                 </div>
-                                <p className="text-gray-600 mt-6">
+                                <p className="text-xs sm:text-sm text-gray-600 mt-4 sm:mt-6">
                                     JSON-LD помогает поисковым системам понять
                                     содержимое страницы и отображать расширенные
                                     результаты поиска (rich snippets)
