@@ -4,6 +4,7 @@ import { HtmlEraSection } from "./view/components/HtmlEraSection";
 import { SpaSection } from "./view/components/SpaSection";
 import { SsrSection } from "./view/components/SsrSection";
 import { NextJsSection2 } from "./view/components/NextJsSection2";
+import { BrowserLimitsSection } from "./view/components/BrowserLimitsSection";
 import { FramerMotionSection } from "./view/components/FramerMotionSection";
 import { ThreeDSection } from "./view/components/ThreeDSection";
 import { UiKitSection } from "./view/components/UiKitSection";
@@ -33,6 +34,7 @@ export const App = memo(() => {
                 <SpaSection />
                 <SsrSection />
                 <NextJsSection2 />
+                <BrowserLimitsSection />
                 <FramerMotionSection />
                 <ThreeDSection />
                 <UiKitSection />

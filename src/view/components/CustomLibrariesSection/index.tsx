@@ -1,9 +1,13 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { FadeIn } from "@/view/animations/FadeIn";
 import { ScaleIn } from "@/view/animations/ScaleIn";
-import { Wrench, Zap, Shield, TrendingUp } from "lucide-react";
+import { Wrench, Zap, Shield, TrendingUp, X, Check } from "lucide-react";
 
 export const CustomLibrariesSection = memo(() => {
+    const [activeTab, setActiveTab] = useState<"navigation" | "pageProvider">(
+        "navigation"
+    );
+
     return (
         <section className="h-screen flex items-center py-8 sm:py-20 md:py-32 relative bg-white border-t border-gray-200 snap-start">
             <div className="container mx-auto px-4 sm:px-6">
@@ -21,66 +25,227 @@ export const CustomLibrariesSection = memo(() => {
                     </FadeIn>
 
                     <FadeIn delay={0.4}>
-                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-8 sm:mb-16">
-                            Кастомные библиотеки под специфику проекта. Скорость
-                            разработки, SEO, производительность.
+                        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+                            Кастомные решения под специфику проекта.
                         </p>
                     </FadeIn>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-6 sm:mb-12">
-                        <ScaleIn delay={0.5}>
-                            <div className="bg-gray-50 p-4 sm:p-8 border border-gray-200">
-                                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                                    <Wrench className="w-8 h-8 sm:w-10 sm:h-10" />
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
-                                        packages/navigation
-                                    </h3>
-                                    </div>
-                                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
-                                    Типобезопасный роутинг с автогенерацией
-                                    типов
-                                </p>
-                                <div className="bg-white p-3 sm:p-4 border border-gray-200 font-mono text-[10px] sm:text-xs">
-                                    <div className="text-gray-600">
-                                        useQueryState('page', 'filter')
-                                    </div>
-                                    <div className="text-green-600 mt-2">
-                                        // ✓ Полная типизация
-                                    </div>
-                                    <div className="text-green-600">
-                                        // ✓ Валидация через Zod
-                                    </div>
-                                </div>
-                            </div>
-                        </ScaleIn>
-
-                        <ScaleIn delay={0.6}>
-                            <div className="bg-gray-50 p-4 sm:p-8 border border-gray-200">
-                                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                                    <Shield className="w-8 h-8 sm:w-10 sm:h-10" />
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
-                                        packages/api-client
-                                    </h3>
-                                    </div>
-                                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
-                                    Unified API layer с автоматическим ретраем и
-                                    кэшированием
-                                </p>
-                                <div className="bg-white p-3 sm:p-4 border border-gray-200 font-mono text-[10px] sm:text-xs">
-                                    <div className="text-gray-600">
-                                        const {"{"} data {"}"} =
-                                        useApi('/users')
-                                    </div>
-                                    <div className="text-green-600 mt-2">
-                                        // ✓ Авто-ретраи
-                                    </div>
-                                    <div className="text-green-600">
-                                        // ✓ Оптимистичные обновления
-                                    </div>
-                                </div>
-                            </div>
-                        </ScaleIn>
+                    <div className="flex gap-3 mb-8">
+                        <button
+                            onClick={() => setActiveTab("navigation")}
+                            className={`px-6 py-3 font-bold transition-all ${
+                                activeTab === "navigation"
+                                    ? "bg-black text-white"
+                                    : "bg-gray-200 hover:bg-gray-300"
+                            }`}
+                        >
+                            Navigation
+                        </button>
+                        <button
+                            onClick={() => setActiveTab("pageProvider")}
+                            className={`px-6 py-3 font-bold transition-all ${
+                                activeTab === "pageProvider"
+                                    ? "bg-black text-white"
+                                    : "bg-gray-200 hover:bg-gray-300"
+                            }`}
+                        >
+                            PageProvider
+                        </button>
                     </div>
+
+                    {activeTab === "navigation" && (
+                        <div className="space-y-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div className="bg-red-50 border-2 border-red-300 p-6">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <X className="w-6 h-6 text-red-600" />
+                                        <h3 className="text-xl font-bold">
+                                            Базовый роутинг
+                                        </h3>
+                                    </div>
+                                    <div className="bg-gray-900 p-4 rounded font-mono text-xs text-gray-100 mb-4">
+                                        <div className="text-red-400">
+                                            const [search, setSearch] =
+                                        </div>
+                                        <div className="ml-4">
+                                            useState&lt;string&gt;()
+                                        </div>
+                                        <div className="mt-2 text-gray-400">
+                                            {"// ✗ Нет типизации параметров"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✗ Нет валидации"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✗ Ручная синхронизация с URL"}
+                                        </div>
+                                    </div>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Ошибки типизации в рантайме
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Невалидные значения в URL
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>Много boilerplate кода</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="bg-green-50 border-2 border-green-300 p-6">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <Check className="w-6 h-6 text-green-600" />
+                                        <h3 className="text-xl font-bold">
+                                            packages/navigation
+                                        </h3>
+                                    </div>
+                                    <div className="bg-gray-900 p-4 rounded font-mono text-xs text-gray-100 mb-4">
+                                        <div className="text-green-400">
+                                            const [search, setSearch] =
+                                        </div>
+                                        <div className="ml-4">
+                                            useQueryState('admin', 'search')
+                                        </div>
+                                        <div className="mt-2 text-gray-400">
+                                            {"// ✓ Полная типизация"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✓ Zod валидация"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✓ Авто-синхронизация"}
+                                        </div>
+                                    </div>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Автогенерация типов из роутов
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Валидация query параметров
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>SEO-friendly маски URL</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === "pageProvider" && (
+                        <div className="space-y-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div className="bg-red-50 border-2 border-red-300 p-6">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <X className="w-6 h-6 text-red-600" />
+                                        <h3 className="text-xl font-bold">
+                                            Обычный подход
+                                        </h3>
+                                    </div>
+                                    <div className="bg-gray-900 p-4 rounded font-mono text-xs text-gray-100 mb-4">
+                                        <div className="text-red-400">
+                                            const data = await fetch('/api')
+                                        </div>
+                                        <div className="text-red-400">
+                                            return {"<Page data={data} />"}
+                                        </div>
+                                        <div className="mt-2 text-gray-400">
+                                            {"// ✗ Дублирование запросов"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✗ Нет префетчинга"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✗ Waterfall загрузки"}
+                                        </div>
+                                    </div>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Медленная загрузка страницы
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>Повторные запросы к API</span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <X className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Сложная обработка ошибок
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="bg-green-50 border-2 border-green-300 p-6">
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <Check className="w-6 h-6 text-green-600" />
+                                        <h3 className="text-xl font-bold">
+                                            packages/pageProvider
+                                        </h3>
+                                    </div>
+                                    <div className="bg-gray-900 p-4 rounded font-mono text-xs text-gray-100 mb-4">
+                                        <div className="text-green-400">
+                                            export const pageProvider = {"{"}
+                                        </div>
+                                        <div className="ml-4">
+                                            queries: [getUserQuery],
+                                        </div>
+                                        <div className="ml-4">
+                                            prefetch: true
+                                        </div>
+                                        <div className="text-green-400">
+                                            {"}"}
+                                        </div>
+                                        <div className="mt-2 text-gray-400">
+                                            {"// ✓ Автоматический префетч"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✓ Параллельная загрузка"}
+                                        </div>
+                                        <div className="text-gray-400">
+                                            {"// ✓ Умное кэширование"}
+                                        </div>
+                                    </div>
+                                    <ul className="space-y-2 text-sm">
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Префетч данных на сервере
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>
+                                                Параллельная загрузка queries
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                                            <span>Единый error handling</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     <div className="grid grid-cols-3 gap-3 sm:gap-6">
                         <ScaleIn delay={0.7}>
