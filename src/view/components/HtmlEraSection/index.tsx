@@ -26,7 +26,9 @@ export const HtmlEraSection = memo(() => {
             name: "index.html",
             content: (
                 <div className="p-4 sm:p-6">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">HTML</div>
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                        HTML
+                    </div>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4">
                         Полотно тегов для структуры контента
                     </p>
@@ -55,7 +57,9 @@ export const HtmlEraSection = memo(() => {
             name: "styles.css",
             content: (
                 <div className="p-4 sm:p-6">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">CSS</div>
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                        CSS
+                    </div>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4">
                         Стили для визуального оформления
                     </p>
@@ -80,7 +84,9 @@ export const HtmlEraSection = memo(() => {
             name: "script.js",
             content: (
                 <div className="p-4 sm:p-6">
-                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">JavaScript</div>
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                        JavaScript
+                    </div>
                     <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4">
                         Скрипты для базовой интерактивности
                     </p>
@@ -116,7 +122,9 @@ export const HtmlEraSection = memo(() => {
                             <div className="bg-gradient-to-r from-[#0054e3] to-[#3985ec] px-2 sm:px-4 py-2 flex justify-between items-center">
                                 <div className="flex items-center gap-1 sm:gap-2 text-white font-bold text-xs sm:text-sm">
                                     <Monitor className="w-3 h-3 sm:w-4 sm:h-4" />
-                                    <span className="hidden sm:inline">Начало пути - Internet Explorer</span>
+                                    <span className="hidden sm:inline">
+                                        Начало пути - Internet Explorer
+                                    </span>
                                     <span className="sm:hidden">IE</span>
                                 </div>
                                 <div className="flex gap-0.5 sm:gap-1">

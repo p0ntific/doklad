@@ -10,6 +10,7 @@ import { UiKitSection } from "./view/components/UiKitSection";
 import { UiKitExamplesSection } from "./view/components/UiKitExamplesSection";
 import { TestingSection } from "./view/components/TestingSection";
 import { TestingCodeSection } from "./view/components/TestingCodeSection";
+import { ScreenshotTestsSection } from "./view/components/ScreenshotTestsSection";
 import { TranslationsSection } from "./view/components/TranslationsSection";
 import { ArchitectureSection } from "./view/components/ArchitectureSection";
 import { CustomLibrariesSection } from "./view/components/CustomLibrariesSection";
@@ -38,6 +39,7 @@ export const App = memo(() => {
                 <UiKitExamplesSection />
                 <TestingSection />
                 <TestingCodeSection />
+                <ScreenshotTestsSection />
                 <TranslationsSection />
                 <ArchitectureSection />
                 <CustomLibrariesSection />

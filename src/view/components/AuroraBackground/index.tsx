@@ -42,3 +42,5 @@ export const AuroraBackground = memo<IAuroraBackgroundProps>(
         );
     }
 );
+
+

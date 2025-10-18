@@ -14,3 +14,5 @@ export const ParallaxText = memo<IParallaxTextProps>(
         return <motion.div style={{ y }}>{children}</motion.div>;
     }
 );
+
+
