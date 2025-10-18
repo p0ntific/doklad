@@ -8,13 +8,8 @@ import { MockScreenshotAfter } from "./MockScreenshotAfter";
 import { MockScreenshotDiff } from "./MockScreenshotDiff";
 
 export const ScreenshotTestsSection = memo(() => {
-    const {
-        sliderPosition,
-        handleMouseDown,
-        handleMouseMove,
-        handleMouseUp,
-        isDragging,
-    } = useImageCompareSlider();
+    const { sliderPosition, handleMouseDown, handleMouseMove, handleMouseUp } =
+        useImageCompareSlider();
     const [showDiff, setShowDiff] = useState(true);
 
     return (

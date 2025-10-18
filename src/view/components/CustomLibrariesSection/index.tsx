@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { FadeIn } from "@/view/animations/FadeIn";
 import { ScaleIn } from "@/view/animations/ScaleIn";
-import { Wrench, Zap, Shield, TrendingUp, X, Check } from "lucide-react";
+import { Zap, Shield, TrendingUp, X, Check } from "lucide-react";
 
 export const CustomLibrariesSection = memo(() => {
     const [activeTab, setActiveTab] = useState<"navigation" | "pageProvider">(
