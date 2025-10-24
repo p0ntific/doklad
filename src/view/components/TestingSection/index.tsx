@@ -1,7 +1,66 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { FadeIn } from "@/view/animations/FadeIn";
 import { ScaleIn } from "@/view/animations/ScaleIn";
 import { TestTube, Camera } from "lucide-react";
+import { motion } from "framer-motion";
+import memeImage from "./assets/meme.png";
+
+const FlipCard = memo(
+    ({
+        children,
+        delay,
+    }: {
+        children: React.ReactNode;
+        delay: number;
+    }) => {
+        const [isFlipped, setIsFlipped] = useState(false);
+
+        return (
+            <ScaleIn delay={delay}>
+                <div
+                    className="relative min-h-[400px] sm:min-h-[450px]"
+                    onMouseEnter={() => setIsFlipped(true)}
+                    onMouseLeave={() => setIsFlipped(false)}
+                >
+                    <div
+                        className="relative w-full h-full"
+                        style={{ perspective: "1000px" }}
+                    >
+                        <motion.div
+                            className="relative w-full h-full min-h-[400px] sm:min-h-[450px]"
+                            style={{ transformStyle: "preserve-3d" }}
+                            animate={{ rotateY: isFlipped ? 180 : 0 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                        >
+                            {/* Front Side */}
+                            <div
+                                className="absolute inset-0 w-full h-full"
+                                style={{ backfaceVisibility: "hidden" }}
+                            >
+                                {children}
+                            </div>
+
+                            {/* Back Side */}
+                            <div
+                                className="absolute inset-0 w-full h-full bg-white border border-gray-200 flex items-center justify-center p-6"
+                                style={{
+                                    backfaceVisibility: "hidden",
+                                    transform: "rotateY(180deg)",
+                                }}
+                            >
+                                <img
+                                    src={memeImage}
+                                    alt="Testing Meme"
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </ScaleIn>
+        );
+    }
+);
 
 export const TestingSection = memo(() => {
     return (
@@ -29,8 +88,8 @@ export const TestingSection = memo(() => {
                     </FadeIn>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16">
-                        <ScaleIn delay={0.5}>
-                            <div className="bg-white border border-gray-200 p-6 sm:p-10">
+                        <FlipCard delay={0.5}>
+                            <div className="bg-white border border-gray-200 p-6 sm:p-10 h-full">
                                 <TestTube className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6" />
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                                     E2E тесты
@@ -54,10 +113,10 @@ export const TestingSection = memo(() => {
                                     </li>
                                 </ul>
                             </div>
-                        </ScaleIn>
+                        </FlipCard>
 
-                        <ScaleIn delay={0.6}>
-                            <div className="bg-white border border-gray-200 p-6 sm:p-10">
+                        <FlipCard delay={0.6}>
+                            <div className="bg-white border border-gray-200 p-6 sm:p-10 h-full">
                                 <Camera className="w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6" />
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                                     Скриншотные тесты
@@ -76,7 +135,7 @@ export const TestingSection = memo(() => {
                                     <li>• Контроль на мобильных и десктопе</li>
                                 </ul>
                             </div>
-                        </ScaleIn>
+                        </FlipCard>
                     </div>
                 </div>
             </div>

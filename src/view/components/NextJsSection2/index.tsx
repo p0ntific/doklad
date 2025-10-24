@@ -2,6 +2,8 @@ import { memo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import meme from "./assets/meme.png";
+
 export const NextJsSection2 = memo(() => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -54,6 +56,9 @@ export const NextJsSection2 = memo(() => {
             benefit:
                 "Монорепозиторий для фронтенда и бэкенда. Типобезопасность на всём пути от API до UI.",
         },
+        {
+            content: <img src={meme} alt="meme" className="h-[350px] w-full" />,
+        },
     ];
 
     const nextSlide = () => {
@@ -90,6 +95,9 @@ export const NextJsSection2 = memo(() => {
                                 className="bg-white border-2 border-gray-300 p-4 sm:p-8 md:p-12 h-[400px] sm:h-[500px] flex flex-col justify-center"
                             >
                                 <div className="text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] text-gray-500 uppercase mb-2 sm:mb-4">
+                                    {features[currentSlide].content}
+                                </div>
+                                <div className="text-[10px] sm:text-xs font-bold tracking-[0.2em] sm:tracking-[0.3em] text-gray-500 uppercase mb-2 sm:mb-4">
                                     {features[currentSlide].subtitle}
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-8">
@@ -98,14 +106,16 @@ export const NextJsSection2 = memo(() => {
                                 <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed mb-4 sm:mb-8">
                                     {features[currentSlide].description}
                                 </p>
-                                <div className="bg-gray-50 border-l-4 border-black p-3 sm:p-6">
-                                    <div className="text-xs sm:text-sm font-bold mb-1 sm:mb-2">
-                                        Зачем это нужно?
+                                {features[currentSlide].benefit && (
+                                    <div className="bg-gray-50 border-l-4 border-black p-3 sm:p-6">
+                                        <div className="text-xs sm:text-sm font-bold mb-1 sm:mb-2">
+                                            Зачем это нужно?
+                                        </div>
+                                        <p className="text-xs sm:text-sm md:text-base text-gray-700">
+                                            {features[currentSlide].benefit}
+                                        </p>
                                     </div>
-                                    <p className="text-xs sm:text-sm md:text-base text-gray-700">
-                                        {features[currentSlide].benefit}
-                                    </p>
-                                </div>
+                                )}
                             </motion.div>
                         </AnimatePresence>
 
