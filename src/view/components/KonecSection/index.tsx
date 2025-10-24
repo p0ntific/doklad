@@ -19,11 +19,13 @@ export const KonecSection = memo(() => {
                         оно того стоит?
                     </motion.h1>
                     <div className="flex gap-20">
-                        <img src={bg} className="w-[500px]" />
-                        <img src={meme} className="w-[500px]" />
+                        <img src={bg} className="w-[500px]" alt="Background" />
+                        <img src={meme} className="w-[500px]" alt="Meme" />
                     </div>
                 </div>
             </AuroraBackground>
         </section>
     );
 });
+
+KonecSection.displayName = "KonecSection";
