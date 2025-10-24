@@ -21,6 +21,7 @@ import { BackendSection1 } from "./view/components/BackendSection1";
 import { BackendUrlSection } from "./view/components/BackendUrlSection";
 import { BackendSection2 } from "./view/components/BackendSection2";
 import { FooterSection } from "./view/components/FooterSection";
+import { KonecSection } from "./view/components/KonecSection";
 
 export const App = memo(() => {
     return (
@@ -51,6 +52,7 @@ export const App = memo(() => {
                 <BackendUrlSection />
                 <BackendSection2 />
                 <FooterSection />
+                <KonecSection />
             </div>
         </div>
     );
